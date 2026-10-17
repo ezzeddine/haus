@@ -556,5 +556,17 @@ document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()
   setTimeout(()=>b.textContent='kopieren',1800);
 }));
 </script>
+<script>
+/* GoatCounter: Kanal aus ?s= (wh=willhaben, ds=derStandard, is=ImmoScout, fb=Facebook) als Referrer melden */
+window.goatcounter = {
+  path: function(p){ return location.pathname; },
+  referrer: function(r){
+    var m = {wh:'willhaben', ds:'derStandard', is:'ImmoScout24', fb:'Facebook', yt:'YouTube'};
+    var s = new URLSearchParams(location.search).get('s');
+    return s ? ('kanal:' + (m[s] || s)) : r;
+  }
+};
+</script>
+<script data-goatcounter="https://haus-lutzmannsburg.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
